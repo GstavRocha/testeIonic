@@ -9,7 +9,7 @@ import { IonicModule, IonInput } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class HomePage {
-  resultado: number;
+  resultado: number | undefined;
   gasolina: number;
   alcool: number;
   cor: string;
@@ -17,7 +17,7 @@ export class HomePage {
   constructor() {
     this.gasolina = 0 ;
     this.alcool = 0 ;
-    this.resultado = 0;
+    this.resultado;
     this.cor=  'primary';
     this.mensagem='';
   }
