@@ -17,7 +17,7 @@ export class HomePage {
     this.gasolina = '';
     this.alcool = '';
     this.resultado = '';
-    this.cor=  '';
+    this.cor=  'primary';
   }
   calcular(a: IonInput,g: IonInput){
       let verificador = 0.70
@@ -25,10 +25,10 @@ export class HomePage {
         let comparar = +a.value / +g.value;
         if( comparar <= verificador){
             this.resultado = 'Alcool';
-            this.cor= 'Warning';
+            this.cor= "success";
         }else{
           this.resultado = 'Gasolina';
-          this.cor = "Primary"
+          this.cor = "danger";
         }
 
       }
