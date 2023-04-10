@@ -12,21 +12,24 @@
       <ion-input label="Preço Alcool" 
       type="number"
       placeholder="Digite o preço do Alcool"
-      labelPlacement="floating" #alcool>
+      labelPlacement="floating" #al>
       </ion-input>
     </ion-item>
     <ion-item>
       <ion-input label="Preço Gasolina" 
       type="number"
       placeholder="Digite o preço da Gasolina"
-      labelPlacement="floating" #gasolina>
+      labelPlacement="floating" #gs>
       </ion-input>
     </ion-item>
-    <ion-button (click)="calcular(alcool, gasolina)" color="danger">Calcular</ion-button>
+    <ion-button (click)="calcular(al, gs)" color="danger">Calcular</ion-button>
     <ion-item lines="none" [color]="cor">
       <ion-label class="ion-text-center">
-        {{resultado}}
+        {{resultado}} {{mensagem}}
       </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-button (click)="limpar(al, gs)" color="success"> limpar</ion-button>
     </ion-item>
   
   </div>

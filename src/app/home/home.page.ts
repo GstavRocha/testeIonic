@@ -9,28 +9,38 @@ import { IonicModule, IonInput } from '@ionic/angular';
   imports: [IonicModule],
 })
 export class HomePage {
-  resultado: string;
-  gasolina: string;
-  alcool: string;
+  resultado: number;
+  gasolina: number;
+  alcool: number;
   cor: string;
+  mensagem: string;
   constructor() {
-    this.gasolina = '';
-    this.alcool = '';
-    this.resultado = '';
+    this.gasolina = 0 ;
+    this.alcool = 0 ;
+    this.resultado = 0;
     this.cor=  'primary';
+    this.mensagem='';
   }
   calcular(a: IonInput,g: IonInput){
       let verificador = 0.70
+      let mensagem = '';
       if(a.value != null && a.value != '' && g.value != null && g.value != ''){
-        let comparar = +a.value / +g.value;
-        if( comparar <= verificador){
-            this.resultado = 'Alcool';
+        let comparador = +a.value / +g.value;
+        if( comparador <= verificador){
+            this.resultado = comparador;
+            this.mensagem = "melhor usar Acool"
             this.cor= "success";
         }else{
-          this.resultado = 'Gasolina';
+          this.resultado = comparador;
+          this.mensagem = "melhor usar Gasolina";
           this.cor = "danger";
         }
 
       }
   }
+  limpar(a: IonInput, g:IonInput){
+    a.value = '';
+    g.value = '';
+  }
+
 }
