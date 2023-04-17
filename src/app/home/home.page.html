@@ -8,29 +8,35 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
+  <form [formGroup]="formGroup">
     <ion-item>
+    
       <ion-input label="Preço Alcool" 
       type="number"
       placeholder="Digite o preço do Alcool"
-      labelPlacement="floating" #al>
+      labelPlacement="floating" formControlName="alcool">
       </ion-input>
     </ion-item>
     <ion-item>
       <ion-input label="Preço Gasolina" 
       type="number"
       placeholder="Digite o preço da Gasolina"
-      labelPlacement="floating" #gs>
+      labelPlacement="floating" formControlName="gasolina">
       </ion-input>
     </ion-item>
-    <ion-button (click)="calcular(al, gs)" color="danger">Calcular</ion-button>
+    <ion-button (click)="calcular()" color="danger" [disabled]="formGroup.invalid">Calcular</ion-button>
+    <div [hidden] = "resultado == 0">
     <ion-item lines="none" [color]="cor">
       <ion-label class="ion-text-center">
-       RESULTADO = {{resultado}} {{mensagem}}
+       {{resultado}} = {{mensagem}}
       </ion-label>
     </ion-item>
+    </div>
     <ion-item>
-      <ion-button (click)="limpar(al, gs)" color="success">limpar</ion-button>
+      <ion-button (click)="limpar()" color="success">limpar</ion-button>
     </ion-item>
+  </form>
+
   
   </div>
 </ion-content>
