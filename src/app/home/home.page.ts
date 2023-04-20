@@ -45,17 +45,18 @@ export class HomePage {
       console.log(this.formGroup.value)
       if(resultado <= verificador){
         this.resultado = resultado;
-        this.mensagem = "melhor usar Acool"
+        this.mensagem = "= melhor usar Acool"
         this.cor= "success";
       }else{
         this.resultado = resultado;
-        this.mensagem = "melhor usar Gasolina";
+        this.mensagem = "= melhor usar Gasolina";
         this.cor = "danger";
       };
   }
   limpar(){
     this.formGroup.setValue({alcool: '' , gasolina: ''})
     this.resultado = '';
+    this.mensagem = '';
     this.cor = 'primary';
 
   }
