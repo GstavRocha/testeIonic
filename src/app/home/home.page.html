@@ -24,23 +24,14 @@
       labelPlacement="floating" formControlName="gasolina">
       </ion-input>
     </ion-item>
-<<<<<<< HEAD
     <ion-button (click)="calcular()" color="danger" [disabled]="formGroup.invalid">Calcular</ion-button>
-    <div [hidden] = "resultado == 0">
-=======
-    <ion-button (click)="calcular(al, gs)" color="danger">Calcular</ion-button>
-    <div [hidden]="resultado  === undefined">
->>>>>>> 6f1f77457d7ff172626e4e05cec44bcde78190d6
+    <div [hidden] = "resultado === 0">
     <ion-item lines="none" [color]="cor">
       <ion-label class="ion-text-center">
        {{resultado}} = {{mensagem}}
       </ion-label>
     </ion-item>
-<<<<<<< HEAD
     </div>
-=======
-  </div>
->>>>>>> 6f1f77457d7ff172626e4e05cec44bcde78190d6
     <ion-item>
       <ion-button (click)="limpar()" color="success">limpar</ion-button>
     </ion-item>
